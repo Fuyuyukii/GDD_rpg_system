@@ -1,11 +1,7 @@
-from base.Constructor import constructor
-from completed.Player import player
-from completed.Party import party
+from base.central_database import parties, players
 
-dkz = constructor(party)
-dkz.party_name = "Dark Kingdom"
-
-yuki = constructor(player)
-yuki.name = "Yuki"
-yuki.party = dkz
-
+parties.add()
+parties.PTA0.name = "Crazy Monkeys"
+players.add()
+players.PLA0.name = "Little Monkey"
+players.PLA0.party = "Crazy Monkeys"

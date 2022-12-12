@@ -22,7 +22,3 @@ class code_bass:
         return str(cls.code_class) + cls.letters[cls.current_letter] + str(cls.id_complement)
 
     # Getters and Setters
-
-    @property
-    def id(self):
-        return self.id

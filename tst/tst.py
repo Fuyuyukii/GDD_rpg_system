@@ -1,24 +1,23 @@
-from tst4 import Weapons
+def keys(code):
+    letters = ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "L", "L", "M",
+               "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z")
+    current_letter = 0
+    id_complement = 0
+    while True:
+        yield str(code) + letters[current_letter] + str(id_complement)
+        if id_complement == 100:
+            current_letter += 1
+            id_complement = 0
+        else:
+            id_complement += 1
 
 
-class Arsenal:
-    weapons: dict[str, Weapons] = {}
-
-    def __init__(self, n_weapons: int = 1):
-        for _ in range(n_weapons):
-            w = Weapons(Weapons.get_id())
-            Arsenal.weapons[Weapons.get_id()] = w
-            Weapons.update_id()
-
-    def __getattr__(self, item):
-        return self.weapons[item]
-
-    @staticmethod
-    def generate_more(qnt):
-        for _ in range(qnt):
-            w = Weapons(Weapons.get_id())
-            Arsenal.weapons[Weapons.get_id()] = w
-            Weapons.update_id()
-
-
-arsenal = Arsenal()
+macacos = keys("PT")
+pinto = keys("SEXO")
+dict = {}
+for i in range(3):
+    dict[next(macacos)] = i
+print(dict)
+for i in range(3):
+    dict[next(pinto)] = i
+print(dict)

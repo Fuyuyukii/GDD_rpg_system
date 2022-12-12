@@ -6,7 +6,7 @@ class party(code_bass):
     current_letter = 0
     id_complement = 0
 
-    def __init__(self, id,  name: str = 'Without names'):
+    def __init__(self, id, name: str = 'Without names'):
         self.__id = id
         self.members = list()
         self.name = name
@@ -20,11 +20,9 @@ class party(code_bass):
         for player in self.members:
             print(f"{i + 1} - {player.name}")
 
-    # Getters and Setters
+    # Heritage Methods
 
-    @property
-    def party_name(self):
-        return self.name
+    # Getters and Setters
 
     @property
     def id(self):
@@ -41,3 +39,4 @@ class party(code_bass):
 
     def __len__(self):
         return len(self.members)
+
